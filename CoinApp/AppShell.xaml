@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:CoinApp.Views"
+    x:Class="CoinApp.AppShell">
+    <TabBar Route="LoginPage">
+        <ShellContent ContentTemplate="{DataTemplate views:LoginPage}"/>
+    </TabBar>
+    <FlyoutItem Route="DashBoard" FlyoutIcon="ic_facebook" Title="Dashboard/Welcome">
+        <ShellContent Title="Dashboard" ContentTemplate="{DataTemplate views:CoinDashboard}" />
+        <ShellContent Title="Welcome" ContentTemplate="{DataTemplate views:WelcomePage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="About">
+        <ShellContent Title="About" ContentTemplate="{DataTemplate views:AboutUsPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Settings and Profile">
+        <ShellContent Title="Settings" ContentTemplate="{DataTemplate views:SettingsPage}"/>
+        <ShellContent Title="Profile" ContentTemplate="{DataTemplate views:ProfilePage}"/>
+    </FlyoutItem>
+    <ShellContent Title="Listings" ContentTemplate="{DataTemplate views:CoinListingsPage}"/>
+    <MenuItem Text="SignOut" Command="{Binding Signout}"/>
+</Shell>
+
+<!--
+LoginPage
+    ForgotPassword
+Dashboard/Welcome
+    Tab1 - Dashboard
+            TabA - Dashboard
+            TabB - Welcome
+About
+Settings and Profile
+Listings
+    CoinDetails
+SignOut
+-->

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CoinApp.Views.CoinListingsPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="Coin Listings Page"/>
+            <Button Text="Go to Details Page" Command="{Binding CoinDetailCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
