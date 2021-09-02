@@ -2,6 +2,7 @@
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace CoinApp.Models
 {
@@ -15,7 +16,7 @@ namespace CoinApp.Models
         public string Date { get; set; }
         [JsonPropertyName("price_usd")]
         public double USDRate { get; set; }
-        [JsonPropertyName("id_icon")]
+        [JsonPropertyName("id_icon")]        
         public String Icon { get; set; }
     }
 }

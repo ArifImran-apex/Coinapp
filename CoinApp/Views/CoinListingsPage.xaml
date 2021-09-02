@@ -5,8 +5,34 @@
     x:Class="CoinApp.Views.CoinListingsPage">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="Coin Listings Page"/>
-            <Button Text="Go to Details Page" Command="{Binding CoinDetailCommand}"/>
+            <Label HorizontalOptions="CenterAndExpand" Margin="10" Text="Cryptocurrency Rates Today."/>
+            <ListView HasUnevenRows="True" ItemsSource="{Binding Currencies}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="75">
+                            <Grid Padding="10">
+                                <Grid.Background>
+                                     <LinearGradientBrush StartPoint="0,0"
+                                                            EndPoint="1,0">
+                                        <GradientStop Color="Yellow"
+                                                        Offset="0.1"/>
+                                        <GradientStop Color="Green"
+                                                        Offset="1.0"/>
+                                    </LinearGradientBrush>
+                                </Grid.Background>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>                                
+                                <Label HorizontalOptions="CenterAndExpand" Text="{Binding Name}"/>
+                                <Label Grid.Row="1" Text="{Binding USDRate}"/>
+                                <Label Grid.Column="1" Text="{Binding Code}"/>
+                                <Image Grid.Row="1" Grid.Column="1" Source="{Binding Icon,Converter={StaticResource IconIDtoURLConverter}}" HeightRequest="100" WidthRequest="100" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

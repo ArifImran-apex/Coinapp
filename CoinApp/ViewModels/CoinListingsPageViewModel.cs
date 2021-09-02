@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CoinApp.Models;
 using CoinApp.Services;
 using Xamarin.Forms;
 
@@ -9,6 +13,18 @@ namespace CoinApp.ViewModels
     public class CoinListingsPageViewModel : BaseViewModel
     {
         CoinService coinService;
+        private List<CoinInfo> currencies = new List<CoinInfo>();
+        public List<CoinInfo> Currencies
+        {
+            get
+            {
+                return currencies;
+            }
+            set
+            {
+                SetField(ref currencies, value);
+            }
+        }
         public ICommand CoinDetailCommand
         {
             get;
@@ -28,7 +44,7 @@ namespace CoinApp.ViewModels
         {
             Task.Run(async () =>
             {
-                var coins = await coinService.GetAllCoinInfo();
+                Currencies = await coinService.GetAllCoinInfo();
             });
         }
     }

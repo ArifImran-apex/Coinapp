@@ -8,6 +8,7 @@
         <ShellContent ContentTemplate="{DataTemplate views:LoginPage}"/>
     </TabBar>
     <FlyoutItem Route="DashBoard" FlyoutIcon="ic_facebook" Title="Dashboard/Welcome">
+        <ShellContent Title="Listings" ContentTemplate="{DataTemplate views:CoinListingsPage}"/>
         <ShellContent Title="Dashboard" ContentTemplate="{DataTemplate views:CoinDashboard}" />
         <ShellContent Title="Welcome" ContentTemplate="{DataTemplate views:WelcomePage}" />
     </FlyoutItem>
@@ -17,8 +18,7 @@
     <FlyoutItem Title="Settings and Profile">
         <ShellContent Title="Settings" ContentTemplate="{DataTemplate views:SettingsPage}"/>
         <ShellContent Title="Profile" ContentTemplate="{DataTemplate views:ProfilePage}"/>
-    </FlyoutItem>
-    <ShellContent Title="Listings" ContentTemplate="{DataTemplate views:CoinListingsPage}"/>
+    </FlyoutItem>    
     <MenuItem Text="SignOut" Command="{Binding Signout}"/>
 </Shell>
 

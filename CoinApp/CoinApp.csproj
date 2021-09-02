@@ -24,11 +24,13 @@
     <None Remove="Models\" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Json.Net" />
+    <None Remove="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Services\" />
     <Folder Include="Models\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
 </Project>
