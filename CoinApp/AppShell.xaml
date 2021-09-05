@@ -8,9 +8,22 @@
         <ShellContent ContentTemplate="{DataTemplate views:LoginPage}"/>
     </TabBar>
     <FlyoutItem Route="DashBoard" FlyoutIcon="ic_facebook" Title="Dashboard/Welcome">
-        <ShellContent Title="Listings" ContentTemplate="{DataTemplate views:CoinListingsPage}"/>
-        <ShellContent Title="Dashboard" ContentTemplate="{DataTemplate views:CoinDashboard}" />
-        <ShellContent Title="Welcome" ContentTemplate="{DataTemplate views:WelcomePage}" />
+        <ShellContent Title="Listings" ContentTemplate="{DataTemplate views:CoinListingsPage}">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="FontAwesomeBrands" Color="Black"
+                     Glyph="&#xf379;"/>
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent Title="Dashboard" ContentTemplate="{DataTemplate views:CoinDashboard}">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="&#xf080;" Color="Black"/>
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent Title="Welcome" ContentTemplate="{DataTemplate views:WelcomePage}">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="&#xf2b5;" Color="Black"/>
+            </ShellContent.Icon>
+        </ShellContent>
     </FlyoutItem>
     <FlyoutItem Title="About">
         <ShellContent Title="About" ContentTemplate="{DataTemplate views:AboutUsPage}"/>

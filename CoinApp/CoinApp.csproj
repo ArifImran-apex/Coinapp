@@ -17,6 +17,22 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Resources\Fonts\Avenir-Heavy.ttf" />
+    <None Remove="Resources\Fonts\Avenir-Medium.ttf" />
+    <None Remove="Resources\Fonts\c.ttf" />
+    <None Remove="Resources\Fonts\fa-brands-400.ttf" />
+    <None Remove="Resources\Fonts\fa-regular-400.ttf" />
+    <None Remove="Resources\Fonts\fa-solid-900.ttf" />
+    <None Remove="Resources\Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+    <None Remove="Resources\Fonts\Font Awesome 5 Free-Regular-400.otf" />
+    <None Remove="Resources\Fonts\Font Awesome 5 Free-Solid-900.otf" />
+    <None Remove="Resources\Fonts\Pacifico.ttf" />
+    <None Remove="Resources\Fonts\Roboto-Medium.ttf" />
+    <None Remove="Resources\Fonts\Roboto-Regular.ttf" />
+    <None Remove="Resources\Fonts\RobotoLight.ttf" />
+    <None Remove="Resources\Fonts\SFProDisplayMedium.ttf" />
+    <None Remove="Resources\Fonts\SFProDisplayRegular.ttf" />
+    <None Remove="Resources\Fonts\SourceSansPro-Bold.ttf" />
     <None Remove="Views\" />
     <None Remove="ViewModels\" />
     <None Remove="Refit" />
@@ -25,6 +41,23 @@
     <None Remove="Newtonsoft.Json" />
     <None Remove="Json.Net" />
     <None Remove="Converters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\Avenir-Heavy.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Avenir-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\fa-brands-400.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\fa-regular-400.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\fa-solid-900.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+    <EmbeddedResource Include="Resources\Fonts\Font Awesome 5 Free-Regular-400.otf" />
+    <EmbeddedResource Include="Resources\Fonts\Font Awesome 5 Free-Solid-900.otf" />
+    <EmbeddedResource Include="Resources\Fonts\Pacifico.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Roboto-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Roboto-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\RobotoLight.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\SFProDisplayMedium.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\SFProDisplayRegular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\SourceSansPro-Bold.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
