@@ -3,36 +3,57 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:CoinApp.Views"
+    xmlns:fontAwesome="clr-namespace:FontAwesome"
     x:Class="CoinApp.AppShell">
     <TabBar Route="LoginPage">
         <ShellContent ContentTemplate="{DataTemplate views:LoginPage}"/>
     </TabBar>
-    <FlyoutItem Route="DashBoard" FlyoutIcon="ic_facebook" Title="Dashboard/Welcome">
+    <FlyoutItem Route="DashBoard" Title="Dashboard/Welcome">
+        <FlyoutItem.FlyoutIcon>
+            <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{x:Static fontAwesome:FontAwesomeIcons.Award}" Color="Black"/>
+        </FlyoutItem.FlyoutIcon>
+        <FlyoutItem.Icon>
+            <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{x:Static fontAwesome:FontAwesomeIcons.Facebook}" Color="Black"/>
+        </FlyoutItem.Icon>
         <ShellContent Title="Listings" ContentTemplate="{DataTemplate views:CoinListingsPage}">
             <ShellContent.Icon>
                 <FontImageSource FontFamily="FontAwesomeBrands" Color="Black"
-                     Glyph="&#xf379;"/>
+                     Glyph="{x:Static fontAwesome:FontAwesomeIcons.Bitcoin}"/>
             </ShellContent.Icon>
         </ShellContent>
         <ShellContent Title="Dashboard" ContentTemplate="{DataTemplate views:CoinDashboard}">
             <ShellContent.Icon>
-                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="&#xf080;" Color="Black"/>
+                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{x:Static fontAwesome:FontAwesomeIcons.ChartArea}" Color="Black"/>
             </ShellContent.Icon>
         </ShellContent>
         <ShellContent Title="Welcome" ContentTemplate="{DataTemplate views:WelcomePage}">
             <ShellContent.Icon>
-                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="&#xf2b5;" Color="Black"/>
+                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{x:Static fontAwesome:FontAwesomeIcons.Handshake}" Color="Black"/>
             </ShellContent.Icon>
         </ShellContent>
     </FlyoutItem>
     <FlyoutItem Title="About">
         <ShellContent Title="About" ContentTemplate="{DataTemplate views:AboutUsPage}"/>
+        <FlyoutItem.Icon>
+            <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{x:Static fontAwesome:FontAwesomeIcons.AddressCard}" Color="Black"/>
+        </FlyoutItem.Icon>
     </FlyoutItem>
     <FlyoutItem Title="Settings and Profile">
-        <ShellContent Title="Settings" ContentTemplate="{DataTemplate views:SettingsPage}"/>
-        <ShellContent Title="Profile" ContentTemplate="{DataTemplate views:ProfilePage}"/>
-    </FlyoutItem>    
-    <MenuItem Text="SignOut" Command="{Binding Signout}"/>
+        <FlyoutItem.Icon>
+            <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{x:Static fontAwesome:FontAwesomeIcons.UserAstronaut}" Color="Black"/>
+        </FlyoutItem.Icon>
+        <ShellContent Title="Settings" ContentTemplate="{DataTemplate views:SettingsPage}">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{x:Static fontAwesome:FontAwesomeIcons.User}" Color="Black"/>
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent Title="Profile" ContentTemplate="{DataTemplate views:ProfilePage}">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{x:Static fontAwesome:FontAwesomeIcons.UserShield}" Color="Red"/>
+            </ShellContent.Icon>
+        </ShellContent>
+    </FlyoutItem>
+    <MenuItem Text="Signout" Command="{Binding Signout}"/>
 </Shell>
 
 <!--
