@@ -12,7 +12,7 @@ namespace CoinApp.ViewModels
 {
     public class CoinListingsPageViewModel : BaseViewModel
     {
-        CoinService coinService;
+        ICoinService coinService;
         private List<CoinInfo> currencies = new List<CoinInfo>();
         public List<CoinInfo> Currencies
         {
@@ -30,9 +30,9 @@ namespace CoinApp.ViewModels
             get;
             set;
         }
-        public CoinListingsPageViewModel()
+        public CoinListingsPageViewModel(ICoinService coinService)
         {
-            coinService = new CoinService();
+            this.coinService = coinService;
             FetchCoins();
             CoinDetailCommand = new Command(async () =>
             {

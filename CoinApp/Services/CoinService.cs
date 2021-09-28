@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CoinApp.Models;
+using CoinApp.Services;
 using Refit;
+using Xamarin.Forms;
 
 namespace CoinApp.Services
 {
