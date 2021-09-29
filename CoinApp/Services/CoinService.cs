@@ -11,15 +11,31 @@ namespace CoinApp.Services
     public class CoinService : ICoinService
     {
         private readonly ICoinAPIService coinAPIService;
-
-        public CoinService()
+        private readonly ILocalCoinCache localCoinCache;
+        public CoinService(ILocalCoinCache localCoinCache)
         {
+            this.localCoinCache = localCoinCache;
             coinAPIService = RestService.For<ICoinAPIService>("https://rest.coinapi.io/v1");
         }
 
         public async Task<List<CoinInfo>> GetAllCoinInfo()
         {
-            return await coinAPIService.GetAllCoinInfo("BTC,ETH,ADA,USDT,BNB");
+            try
+            {
+                var coins = await coinAPIService.GetAllCoinInfo("BTC,ETH,ADA,USDT,BNB");
+
+                //Save Locally
+                foreach (var coin in coins)
+                {
+                    await localCoinCache.SaveCoin(coin);
+                }
+
+                return await localCoinCache.GetAllCoinsData();
+            }
+            catch(Exception ex)
+            {
+                return await localCoinCache.GetAllCoinsData();
+            }
         }
 
         public Task<CoinInfo> GetCoinInfo()

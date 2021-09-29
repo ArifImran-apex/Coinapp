@@ -15,6 +15,7 @@ namespace CoinApp.Helper
         {
             // services
             var builder = new ContainerBuilder();
+            builder.RegisterType<LocalCoinCache>().As<ILocalCoinCache>().SingleInstance();
             builder.RegisterType<CoinService>().As<ICoinService>().SingleInstance();
             builder.RegisterType<CoinListingsPageViewModel>().SingleInstance();
             container = builder.Build();

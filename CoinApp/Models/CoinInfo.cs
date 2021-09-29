@@ -2,12 +2,14 @@
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
+using SQLite;
 using Xamarin.Forms;
 
 namespace CoinApp.Models
 {
     public class CoinInfo
     {
+        [PrimaryKey]
         [JsonPropertyName("asset_id")]
         public string Code { get; set; }
         [JsonPropertyName("name")]
