@@ -44,7 +44,10 @@ namespace CoinApp.ViewModels
         {
             Task.Run(async () =>
             {
+                // To show the loader
+                IsBusy = true;
                 Currencies = await coinService.GetAllCoinInfo();
+                IsBusy = false;
             });
         }
     }

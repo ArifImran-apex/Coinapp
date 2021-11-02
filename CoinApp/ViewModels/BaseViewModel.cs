@@ -11,6 +11,14 @@ namespace CoinApp.ViewModels
         public BaseViewModel()
         {
         }
+        // Property to show loader views
+        private bool isBusy;
+
+        public bool IsBusy
+        {
+            get { return isBusy; }
+            set { SetField(ref isBusy, value); }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

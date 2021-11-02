@@ -4,41 +4,45 @@
     Title="Listings"
     xmlns:helper="clr-namespace:CoinApp.Helper;assembly=CoinApp"
     helper:ViewModelLocator.AutoWireViewModel="True"
+    xmlns:customControls="clr-namespace:CoinApp.CustomUIControls"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CoinApp.Views.CoinListingsPage">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <StackLayout.Background>
-                <LinearGradientBrush StartPoint="0,0"
+        <Grid>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout.Background>
+                    <LinearGradientBrush StartPoint="0,0"
                                                             EndPoint="1,0">
-                    <GradientStop Color="Yellow"
+                        <GradientStop Color="Yellow"
                                                         Offset="0.1"/>
-                    <GradientStop Color="Green"
+                        <GradientStop Color="Green"
                                                         Offset="1.0"/>
-                </LinearGradientBrush>
-            </StackLayout.Background>
-            <Label HorizontalOptions="CenterAndExpand" Margin="10" FontAttributes="Bold" FontSize="28" FontFamily="Avenir-Heavy"  Text="Cryptocurrency Rates Today"/>
-            <ListView HasUnevenRows="True" ItemsSource="{Binding Currencies}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell Height="75">
-                            <Grid Padding="10">
-                                
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="7*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label HorizontalOptions="Start" Text="{Binding Name}" FontFamily="SourceSansPro-Bold" FontSize="22" />
-                                    <Label HorizontalOptions="StartAndExpand" FontSize="22" FontFamily="SFProDisplayRegular" Text="{Binding Code,StringFormat='({0})'}"/>
-                                </StackLayout>
-                                <Label Grid.Row="1" Text="{Binding USDRate,StringFormat='{0:C}'}" FontFamily="Avenir-Medium"  FontSize="18" />                               
-                                <Image Grid.RowSpan="2" Grid.Column="1" Source="{Binding Icon,Converter={StaticResource IconIDtoURLConverter}}" HeightRequest="200" WidthRequest="200" />
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                    </LinearGradientBrush>
+                </StackLayout.Background>
+                <Label HorizontalOptions="CenterAndExpand" Margin="10" FontAttributes="Bold" FontSize="28" FontFamily="Avenir-Heavy"  Text="Cryptocurrency Rates Today"/>
+                <ListView HasUnevenRows="True" ItemsSource="{Binding Currencies}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="75">
+                                <Grid Padding="10">
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="7*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label HorizontalOptions="Start" Text="{Binding Name}" FontFamily="SourceSansPro-Bold" FontSize="22" />
+                                        <Label HorizontalOptions="StartAndExpand" FontSize="22" FontFamily="SFProDisplayRegular" Text="{Binding Code,StringFormat='({0})'}"/>
+                                    </StackLayout>
+                                    <Label Grid.Row="1" Text="{Binding USDRate,StringFormat='{0:C}'}" FontFamily="Avenir-Medium"  FontSize="18" />
+                                    <Image Grid.RowSpan="2" Grid.Column="1" Source="{Binding Icon,Converter={StaticResource IconIDtoURLConverter}}" HeightRequest="200" WidthRequest="200" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <customControls:CustomActivityIndicator IsRunning="{Binding IsBusy}"/>
+        </Grid>        
     </ContentPage.Content>
 </ContentPage>
